@@ -1,5 +1,14 @@
+import { useState } from 'react'
+import Form from './components/Form'
+
 function App() {
-  return <h1>hola</h1>
+  const [items, setItems] = useState([])
+
+  return (
+    <section className="section-center">
+      <Form />
+    </section>
+  )
 }
 
 export default App
