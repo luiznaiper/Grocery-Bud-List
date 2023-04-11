@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const Form = () => {
+const Form = ({ addItem }) => {
   const [newItem, setNewItem] = useState('')
 
   const handleChange = (e) => {
@@ -9,7 +9,12 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault(e)
-    console.log(newItem)
+    if (!newItem) {
+      return
+    } else {
+      addItem(newItem)
+      setNewItem('')
+    }
   }
 
   return (
